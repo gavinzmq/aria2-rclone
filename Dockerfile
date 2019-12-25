@@ -12,6 +12,7 @@ RUN apk add --update --no-cache aria2 wget \
     && apk del unzip wget \
     && rm -rf /var/cache/apk/* \
     && mkdir /config \
+    && mkdir /root.config \
     && ln -s /config /root/.config/rclone \
     && chmod +x /root/init.sh
 

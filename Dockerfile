@@ -10,7 +10,8 @@ RUN apk add --update --no-cache aria2 wget \
     && rm rclone-*-linux-* -rf \
     && rm rclone.zip \
     && apk del unzip wget \
-    && rm -rf /var/cache/apk/*
+    && rm -rf /var/cache/apk/* \
+    && chmod +x /root/init.sh
 
 VOLUME ["/root/.aria2","/root/Download", "/config"]
 EXPOSE 6800

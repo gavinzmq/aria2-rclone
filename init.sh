@@ -10,4 +10,4 @@ rpc-secret=${RPC_SECRET:-}
 
 EOF
 
-rclone config --config ${RCLONE_OPTS:-/config}/rclone.conf & aria2c --conf-path=/root/.aria2/aria2.conf
+rclone config ${RCLONE_OPTS} & aria2c --conf-path=/root/.aria2/aria2.conf

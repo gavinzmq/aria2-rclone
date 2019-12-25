@@ -2,12 +2,10 @@
 chmod +x /root/.aria2/autoupload.sh
 chmod +x /root/.aria2/delete.aria2.sh
 chmod +x /root/.aria2/delete.sh
+
+
+echo "rpc-secret=${RPC_SECRET:-}" >> /etc/aria2.conf
+
 echo > /root/.aria2/aria2.session
 
-cat >> /etc/aria2.conf <<EOF
-
-rpc-secret=${RPC_SECRET:-}
-
-EOF
-
-rclone config ${RCLONE_OPTS} & aria2c --conf-path=/root/.aria2/aria2.conf
+rclone config --config /config/rclone.conf & aria2c --conf-path=/root/.aria2/aria2.conf

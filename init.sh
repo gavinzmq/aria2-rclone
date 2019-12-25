@@ -1,4 +1,7 @@
 #!/bin/sh
+
+ln -s /config /root/.config/rclone
+
 chmod +x /root/.aria2/autoupload.sh
 chmod +x /root/.aria2/delete.aria2.sh
 chmod +x /root/.aria2/delete.sh
